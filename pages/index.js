@@ -12,7 +12,12 @@ export default function Home() {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
-        setPrices(data);
+        // Convert the object into an array of { name, price } objects
+        const formattedData = Object.entries(data).map(([name, price]) => ({
+          name,
+          price,
+        }));
+        setPrices(formattedData);
       } catch (err) {
         console.error("Failed to fetch memecoin prices:", err);
         setPrices([]);
@@ -33,7 +38,7 @@ export default function Home() {
         <ul className="space-y-4">
           {prices.map((coin, index) => (
             <li key={index} className="border p-4 rounded shadow">
-              <p className="text-xl font-semibold">{coin.name}</p>
+              <p className="text-xl font-semibold capitalize">{coin.name}</p>
               <p className="text-gray-700">${coin.price}</p>
             </li>
           ))}
@@ -44,4 +49,3 @@ export default function Home() {
     </div>
   );
 }
-
