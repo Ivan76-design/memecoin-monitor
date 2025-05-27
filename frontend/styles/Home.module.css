@@ -1,0 +1,30 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #238636;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
